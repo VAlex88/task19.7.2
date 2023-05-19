@@ -189,7 +189,7 @@ def test_add_new_pet_with_number_in_animal_type(name='Муся', animal_type='12
     status, result = pf.add_new_pet(auth_key, name, animal_type, age, pet_photo)
 
     assert status == 400
-    # Фактический результат (status == 200) расходится с ожидаемым (status == 400)!!!
+    # Баг: Фактический результат (status == 200) расходится с ожидаемым (status == 400)!!!
 
 def test_add_new_pet_with_special_symbols_in_animal_type(name='Муся', animal_type='К%шк@',
                                        age='два', pet_photo='images/cat1.jpg'):
@@ -200,4 +200,4 @@ def test_add_new_pet_with_special_symbols_in_animal_type(name='Муся', animal
     status, result = pf.add_new_pet(auth_key, name, animal_type, age, pet_photo)
 
     assert status == 400
-    # Фактический результат (status == 200) расходится с ожидаемым (status == 400)
+    # Баг: Фактический результат (status == 200) расходится с ожидаемым (status == 400)
